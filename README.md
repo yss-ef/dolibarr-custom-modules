@@ -65,12 +65,10 @@ sudo chmod -R 755 /var/www/html/dolibarr/htdocs/custom/
 
 ---
 
-*Developed by Youssef Fellah during the HTBS Africa Internship.*
+*Authored by Youssef Fellah.*
 
----
-
-Would you like me to process another README, or would you like to dive into the technical explanation of how to structure the PHP code for one of these Dolibarr modules?
-
+*Developed as part of the 2nd year Engineering Cycle - Mundiapolis University.*
 ---
 
 *Authored by Youssef Fellah.*
+
