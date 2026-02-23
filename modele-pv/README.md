@@ -1,76 +1,78 @@
-# Modèle PV Intervention Personnalisé pour Dolibarr
+# 📄 Dolibarr Custom Intervention Report (PV) Template
 
-Le modèle PV Intervention Personnalisé est un document PDF avancé pour l'ERP/CRM Dolibarr, conçu pour générer des procès-verbaux (PV) d'intervention sur mesure.
+> **Dolibarr ERP/CRM Extension**
+> An advanced PDF document template engineered to generate bespoke Field Service Reports (*Procès-Verbaux d'Intervention*). This module replaces standard generic templates with a professional design, integrating smart features to automate data entry and dynamically adapt to specific business requirements.
 
-Il remplace les modèles standards par un design professionnel et ajoute des fonctionnalités intelligentes pour automatiser la saisie d'informations.
+## 📑 Table of Contents
 
-Ce modèle résout le problème des documents génériques en offrant un PV qui correspond à un besoin métier spécifique et qui s'adapte dynamiquement aux données de l'intervention.
+* [Core Features](https://www.google.com/search?q=%23-core-features)
+* [Mandatory Configuration (Extrafields)](https://www.google.com/search?q=%23%EF%B8%8F-mandatory-configuration-extrafields)
+* [Installation Guide](https://www.google.com/search?q=%23-installation-guide)
+* [Activation & Setup](https://www.google.com/search?q=%23-activation--setup)
+* [Usage Workflow](https://www.google.com/search?q=%23-usage-workflow)
 
----
+## ✨ Core Features
 
-## 2. Installation
+* **Professional Layout:** Upgrades the default Dolibarr PDF output to a clean, corporate-ready document structure.
+* **Dynamic Data Injection:** Automatically maps and displays custom intervention metadata directly onto the final PDF.
+* **Automated Time Tracking:** Intelligently calculates and displays precise start times, end times, and overall durations based on the individual tasks logged within the intervention card.
+* **Contextual Adaptation:** Bypasses the limitations of generic documents by tailoring the output strictly to field service operations.
 
-1.  Téléchargez le fichier pdf_perso.modules.php.
+## ⚙️ Mandatory Configuration (Extrafields)
 
-2.  Connectez-vous à votre serveur (via FTP, cPanel, ou en local).
+> **⚠️ CRITICAL:** For the PHP template to fetch and render the data correctly, you must manually create specific custom attributes (Extrafields) in Dolibarr. This is a one-time setup.
 
-3.  Copiez le fichier pdf_perso.modules.php dans le répertoire suivant : <racine_dolibarr>/htdocs/core/modules/fichinter/doc/
+1. Navigate to **Home > Setup > Modules/Applications**.
+2. Locate the **Interventions** module and click its setup icon (⚙️).
+3. Go to the **Complementary attributes (Interventions)** tab.
+4. Click **New attribute** and create the following six fields *exactly* as listed below:
 
----
+| Field Label (Example) | Attribute Code | Data Type |
+| --- | --- | --- |
+| Intervention Type | `typeintervention` | String (1 line) |
+| Technician / Assignee | `intervenant` | String (1 line) |
+| Subject | `objet` | String (1 line) |
+| Location | `lieu` | String (1 line) |
+| Contract Number | `numeromarche` | String (1 line) |
+| Quarter | `trimestre` | String (1 line) |
 
-## 3. Configuration (Étape Manuelle Obligatoire)
+## 🚀 Installation Guide
 
-_Important_ : Pour que le modèle soit fonctionnel, une configuration manuelle des champs personnalisés est indispensable. Cette étape n'est à réaliser qu'une seule fois.
+Unlike standard modules that go into the `custom` folder, PDF models must be placed directly into the core document directories. To install this on your **Fedora 43** environment:
 
-1.  Depuis le menu principal de Dolibarr, naviguez vers :
+**1. Locate the downloaded file**
+Ensure you have the `pdf_perso.modules.php` file ready.
 
-Accueil → Configuration → Modules/Applications.
+**2. Copy to the core directory**
+Execute the following command, adjusting the path to match your local Dolibarr web root:
 
-2.  Recherchez le module Interventions et cliquez sur son icône de configuration (roue crantée ⚙️).
+```bash
+sudo cp pdf_perso.modules.php /var/www/html/dolibarr/htdocs/core/modules/fichinter/doc/
 
-3.  Accédez à l'onglet "Attributs supplémentaires".
+```
 
-4.  Cliquez sur le bouton "Nouvel attribut" et créez les cinq attributs suivants en respectant exactement les valeurs ci-dessous :
+**3. Set Permissions**
 
-| Libellé              | Code de l'attribut | Type                           |
+```bash
+sudo chown apache:apache /var/www/html/dolibarr/htdocs/core/modules/fichinter/doc/pdf_perso.modules.php
+sudo chmod 644 /var/www/html/dolibarr/htdocs/core/modules/fichinter/doc/pdf_perso.modules.php
 
-| :------------------- | :----------------- | :----------------------------- |
-| **Type d’intervention**        | `typeintervention`        | Chaîne de caractères (1 ligne) |
+```
 
-| **Intervenant**      | `intervenant`      | Chaîne de caractères (1 ligne) |
+## 🔌 Activation & Setup
 
-| **Objet**            | `objet`            | Chaîne de caractères (1 ligne) |
+1. Return to the **Interventions** module setup page (Home > Setup > Modules/Applications > Interventions ⚙️).
+2. Scroll down to the **Interventions cards document models** section.
+3. The new template (e.g., "PV Intervention Final") will now appear in the list.
+4. Toggle the switch to **Enable** it.
+5. *(Optional)* Click the star icon to set it as the default generation model for all future interventions.
 
-| **Lieu**             | `lieu`             | Chaîne de caractères (1 ligne) |
+## 📖 Usage Workflow
 
-| **Numéro du marché** | `numeromarche`     | Chaîne de caractères (1 ligne) |
+With the template installed and extrafields configured:
 
-| **Trimestre**        | `trimestre`        | Chaîne de caractères (1 ligne) |
-
----
-
-## 4. Activation du Modèle
-
-Une fois le fichier copié et les attributs créés, retournez dans la configuration du module Interventions.
-
-Le nouveau modèle (par exemple, "PV Intervention Final") devrait apparaître dans la liste des "Modèles de document des fiches d'intervention".
-
-Cliquez sur l'interrupteur pour l'activer. Vous pouvez également le définir comme modèle par défaut en cliquant sur l'icône en forme d'étoile.
-
----
-
-## 5. Utilisation
-
-Une fois le modèle installé et les attributs configurés :
-
-1.  Créez une nouvelle fiche d'intervention ou modifiez-en une existante.
-
-2.  Ajoutez les différentes tâches dans la section des lignes en bas de la page, en précisant pour chacune une date, une heure et une durée.
-
-3.  Dans le menu déroulant "Modèle à utiliser", sélectionnez votre nouveau modèle (ex: "PV Intervention Final").
-
-4.  Cliquez à nouveau sur "Générer".
-
-Le document final affichera toutes les informations, avec les dates et heures calculées automatiquement.
-
-voila le readme de l'ancien modele modifie le pour le rendre compatible
+1. Create a new **Intervention Card** or modify an existing one.
+2. Fill out the newly created custom fields (Type, Location, Contract, etc.).
+3. Scroll down to the task lines. Add your tasks, ensuring you specify a **date**, **time**, and **duration** for each.
+4. In the document generation section, select your custom template from the dropdown menu.
+5. Click **Generate**. The final PDF will compile all metadata and automatically calculate the chronological execution of your tasks.
