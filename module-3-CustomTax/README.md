@@ -1,56 +1,75 @@
-# Module CustomTax pour Dolibarr
+# 🧾 Dolibarr CustomTax Module
 
-Le module **CustomTax** est une extension pour l'ERP Dolibarr conçue pour offrir plus de flexibilité dans la gestion des libellés de taxe sur les factures. Il permet de personnaliser le nom de la taxe (par exemple, "TVA", "VAT", "GST", "Sales Tax") directement sur chaque facture, ce qui est particulièrement utile pour les entreprises travaillant avec une clientèle internationale.
+> **Dolibarr ERP/CRM Extension**
+> The **CustomTax** module provides ultimate flexibility in managing tax labels on financial documents. It allows users to dynamically customize the tax acronym (e.g., "TVA", "VAT", "GST", "Sales Tax") directly on a per-invoice basis. This is an essential tool for companies operating internationally that need to bypass Dolibarr's hardcoded tax labels.
 
-Ce module résout le problème des libellés de taxe fixes en ajoutant un champ personnalisé sur les factures et en utilisant un modèle de document ODT pour afficher dynamiquement le nom de taxe choisi.
+## 📑 Table of Contents
 
----
+* [Project Overview](https://www.google.com/search?q=%23-project-overview)
+* [Installation Guide](https://www.google.com/search?q=%23-installation-guide)
+* [Mandatory Configuration (Extrafields)](https://www.google.com/search?q=%23%EF%B8%8F-mandatory-configuration-extrafields)
+* [Document Template Setup](https://www.google.com/search?q=%23-document-template-setup)
+* [Usage Workflow](https://www.google.com/search?q=%23-usage-workflow)
 
-## 2. Installation
+## 📋 Project Overview
 
-1.  Copiez le dossier du module `customtax` dans le répertoire `<racine_dolibarr>/htdocs/custom/`.
-2.  Connectez-vous à votre instance Dolibarr avec un compte administrateur.
-3.  Allez dans **Accueil -> Configuration -> Modules/Applications**.
-4.  Trouvez le module **CustomTax** dans la liste et cliquez sur le bouton "Activer".
+Natively, Dolibarr restricts invoices to a single, static tax label defined in the global dictionary. This module solves that limitation by injecting a custom attribute (Extrafield) into the invoice creation process. Combined with a customized ODT (OpenDocument Text) template, it maps the user's input to dynamically render the correct localized tax acronym on the final generated PDF/ODT.
 
----
+## 🚀 Installation Guide
 
-## 3. Configuration (Étape Manuelle Obligatoire)
+To install the module on your **Fedora 43** web server:
 
-Pour que le module soit fonctionnel, une configuration manuelle est **indispensable** après l'activation. Cette étape ne doit être réalisée qu'une seule fois.
+**1. Deploy the Module**
+Copy the `customtax` directory into your Dolibarr custom modules folder:
 
-1.  Depuis le menu principal, naviguez vers : **Accueil -> Configuration -> Modules/Applications**.
-2.  Recherchez le module **Factures et Avoirs** et cliquez sur son icône de configuration (roue crantée).
-3.  Accédez à l'onglet **"Attributs supplémentaires (factures)"**.
-4.  Cliquez sur le bouton **"Nouvel attribut"**.
-5.  Remplissez le formulaire avec les valeurs **exactes** ci-dessous :
-    - **Libellé ou clé de traduction :** `Nom de la taxe`
-    - **Code de l'attribut :** `custom_tax_name`
-    - **Type :** `Chaine de caractères (1 ligne)`
-    - **Valeur par défaut :** `TVA`
-    - **Visibilité :** `1`
-6.  Enregistrez l'attribut.
+```bash
+sudo cp -r customtax /var/www/html/dolibarr/htdocs/custom/
+sudo chown -R apache:apache /var/www/html/dolibarr/htdocs/custom/customtax
 
----
+```
 
-## 4. Ajout du Modèle de Document (Étape Manuelle Obligatoire)
+**2. Activate the Module**
 
-Une fois l'attribut créé, vous devez ajouter le modèle de document `.odt` personnalisé qui permettra d'afficher le nom de la taxe.
+1. Log into your Dolibarr instance with an Administrator account.
+2. Navigate to **Home > Setup > Modules/Applications**.
+3. Locate the **CustomTax** module in the list and click **Enable**.
 
-1.  Toujours dans la configuration du module **Factures et Avoirs** (Accueil -> Modules/Applications -> Paramètres de "Factures et Avoirs").
-2.  Dans l'onglet **"Modèles de documents"**, repérez la section pour les factures.
-3.  Utilisez le formulaire d'ajout en bas de la page : cliquez sur **"Choisir un fichier"** et sélectionnez le fichier `.odt` fourni avec ce module.
-4.  Cliquez sur le bouton **"Ajouter modèle"** pour téléverser le document.
-5.  Le nouveau modèle devrait maintenant apparaître dans la liste des modèles de factures disponibles.
+## ⚙️ Mandatory Configuration (Extrafields)
 
----
+> **⚠️ CRITICAL:** For the module to function, you must manually create the database attribute that will store the custom tax string. This is a one-time setup.
 
-## 5. Utilisation
+1. Navigate to **Home > Setup > Modules/Applications**.
+2. Find the **Invoices and Credit Notes** module and click its setup icon (⚙️).
+3. Go to the **Complementary attributes (invoices)** tab.
+4. Click **New attribute** and fill out the form using the *exact* values below:
 
-Une fois le module installé, l'attribut configuré et le modèle ajouté :
+| Field | Required Value |
+| --- | --- |
+| **Label / Translation key** | `Tax Name` |
+| **Attribute code** | `custom_tax_name` |
+| **Type** | `String (1 line)` |
+| **Default value** | `TVA` (or your most common tax) |
+| **Visibility** | `1` |
 
-1.  Créez une nouvelle facture ou modifiez-en une existante.
-2.  Un nouveau champ intitulé **"Nom de la taxe"** apparaîtra.
-3.  Saisissez le libellé de taxe souhaité dans ce champ (par exemple, "VAT").
-4.  Pour générer le document, dans le menu déroulant "Modèle à utiliser", **sélectionnez le nouveau modèle** que vous venez d'ajouter.
-5.  Cliquez sur "Générer". Le document final affichera le nom de la taxe que vous avez saisi.
+5. Click **Save**.
+
+## 📄 Document Template Setup
+
+Once the attribute is created, you must upload the custom `.odt` document template that contains the logic to display the new tax name.
+
+1. Remain in the **Invoices and Credit Notes** setup area (Home > Setup > Modules/Applications > Invoices ⚙️).
+2. Navigate to the **Document models** tab.
+3. Scroll down to the upload form for invoice models.
+4. Click **Choose File** and select the `.odt` file provided with this module repository.
+5. Click **Add model** to upload it to the server. The template will now be available in your document generation dropdowns.
+
+## 📖 Usage Workflow
+
+With the module installed, the extrafield configured, and the ODT template uploaded:
+
+1. Create a new invoice or modify an existing one.
+2. Locate the newly injected field labeled **Tax Name**.
+3. Enter the required tax acronym for this specific client (e.g., "GST").
+4. Scroll down to the document generation section.
+5. From the "Model to use" dropdown, **select the newly uploaded ODT template**.
+6. Click **Generate**. The final document will dynamically render the custom tax acronym you provided.
