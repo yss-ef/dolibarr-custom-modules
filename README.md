@@ -67,8 +67,8 @@ sudo chmod -R 755 /var/www/html/dolibarr/htdocs/custom/
 
 *Authored by Youssef Fellah.*
 
-*Developed as part of the 2nd year Engineering Cycle - Mundiapolis University.*
----
+*Developed as part of an internship - HTBS Afriqua*
 
-*Authored by Youssef Fellah.*
+
+
 
