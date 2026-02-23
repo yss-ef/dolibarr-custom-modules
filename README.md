@@ -70,3 +70,7 @@ sudo chmod -R 755 /var/www/html/dolibarr/htdocs/custom/
 ---
 
 Would you like me to process another README, or would you like to dive into the technical explanation of how to structure the PHP code for one of these Dolibarr modules?
+
+---
+
+*Authored by Youssef Fellah.*
