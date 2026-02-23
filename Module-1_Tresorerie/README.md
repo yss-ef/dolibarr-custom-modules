@@ -1,60 +1,73 @@
-# Module Tableau de Bord de Trésorerie pour Dolibarr
+# 💰 Dolibarr Treasury Dashboard Module
 
-Ce module ajoute un tableau de bord financier complet à Dolibarr, offrant une vue claire et détaillée de la trésorerie mensuelle et une synthèse annuelle des flux financiers. Il est conçu pour aider les gestionnaires à anticiper les flux de trésorerie et à analyser l'activité financière.
+> **Dolibarr ERP/CRM Extension**
+> A comprehensive financial dashboard module designed to provide a clear, detailed view of monthly cash flows and an annual synthesis of financial activities. It empowers managers to anticipate cash movements, track overdue payments, and analyze overall financial health.
 
----
+## 📑 Table of Contents
 
-## Fonctionnalités
+* [Core Features](https://www.google.com/search?q=%23-core-features)
+* [System Prerequisites](https://www.google.com/search?q=%23%EF%B8%8F-system-prerequisites)
+* [Installation Guide](https://www.google.com/search?q=%23-installation-guide)
+* [User Guide](https://www.google.com/search?q=%23-user-guide)
 
-- **Tableau de Synthèse Mensuel :** Affiche une vue d'ensemble combinant les flux **réalisés et prévisionnels** du mois en cours pour :
+## ✨ Core Features
 
-  - Les entrées totales (TTC).
-  - La TVA sur les entrées.
-  - Les sorties fournisseurs.
-  - Les charges et dépenses spéciales.
-  - La TVA à décaisser (estimation sur les débits).
-  - La synthèse nette du mois.
+* **Monthly Summary Board:** Displays a unified overview combining both **realized and forecasted** cash flows for the current month, including:
+* Total inflows (inclusive of tax).
+* VAT collected on inflows.
+* Supplier outflows.
+* Special charges and expenses.
+* VAT to be disbursed (estimated based on debits).
+* Net monthly synthesis.
 
-- **Vue Annuelle Interactive :** Un tableau récapitulatif présentant les indicateurs clés mois par mois pour une année complète, avec les totaux annuels. La page inclut un sélecteur pour choisir l'année à afficher.
 
-- **Suivi des Retards :** Des tableaux dédiés pour identifier rapidement les factures clients et fournisseurs dont la date de règlement est dépassée.
+* **Interactive Annual View:** A comprehensive summary table presenting key indicators month-by-month for a full calendar year, complete with annual totals. Includes a dynamic year selector.
+* **Overdue Tracking:** Dedicated tables designed to instantly identify client and supplier invoices that have passed their due dates.
+* **Granular Data Lists:** Strictly separates forecasted transactions (pending invoices, scheduled charges) from realized activities (paid invoices, settled charges) for precise financial tracking.
+* **Visual Analytics:** Integrates two distinct charts within the monthly view to visualize cash flow synthesis and weekly commercial activity trends.
 
-- **Listes Détaillées :** Sépare clairement les transactions prévisionnelles (factures à encaisser/payer, charges à régler) de l'activité déjà réalisée (factures réglées, charges payées) pour un suivi précis.
+## ⚙️ System Prerequisites
 
-- **Graphiques Visuels :** Deux graphiques sur la vue mensuelle pour visualiser la synthèse des flux de trésorerie et l'activité commerciale hebdomadaire.
+Ensure your Dolibarr environment meets the following requirements before installation:
 
----
+* **Core System:** Dolibarr ERP/CRM (Version 7.0 or higher).
+* **Required Native Modules (Must be activated):**
+* Invoices (`facture`)
+* Banks and Cash (`banque`)
+* Expense Reports (`ndfp`)
+* Taxes, VAT, and Social Dividends (`tax`)
 
-## Prérequis
 
-- **Dolibarr ERP/CRM :** Version 7.0 ou supérieure.
-- **Modules Dolibarr activés :**
-  - Factures
-  - Banques et Caisses
-  - Notes de Frais
-  - Taxes, TVA et Charges Sociales
 
----
+## 🚀 Installation Guide
 
-## Installation
+To install and configure this module on your local server (e.g., **Fedora 43** with a standard web server stack):
 
-1.  Copiez le dossier `tresoreriemensuelle` dans le répertoire `htdocs/custom/` de votre installation Dolibarr.
+**1. Deploy the Source Code**
+Copy or clone the `tresoreriemensuelle` directory into your Dolibarr `custom` folder:
 
-2.  Connectez-vous à Dolibarr en tant qu'administrateur.
+```bash
+# Example path, adjust according to your specific web root
+sudo cp -r tresoreriemensuelle /var/www/html/dolibarr/htdocs/custom/
+sudo chown -R apache:apache /var/www/html/dolibarr/htdocs/custom/tresoreriemensuelle
 
-3.  Allez dans `Accueil > Configuration > Modules/Applications`.
+```
 
-4.  Trouvez le module **"Tableau de Bord Trésorerie"** dans la liste et cliquez sur le bouton d'activation.
+**2. Activate the Module**
 
-5.  Allez dans `Accueil > Utilisateurs & Groupes`, sélectionnez un utilisateur ou un groupe, et dans l'onglet "Permissions", accordez le droit **"Voir le tableau de bord de trésorerie"**.
+1. Log into your Dolibarr instance as an Administrator.
+2. Navigate to **Home > Setup > Modules/Applications**.
+3. Locate **"Tableau de Bord Trésorerie"** (Treasury Dashboard) in the list and click the toggle to enable it.
 
----
+**3. Configure User Permissions**
 
-## Utilisation
+1. Go to **Home > Users & Groups**.
+2. Select the relevant user or group.
+3. Under the **Permissions** tab, grant the right: **"View the treasury dashboard"**.
 
-Une fois le module activé, une nouvelle entrée de menu nommée **"Trésorerie"** apparaît dans la barre de menu supérieure.
+## 📖 User Guide
 
-- **Trésorerie > Vue Mensuelle :** Affiche le tableau de bord détaillé pour le mois en cours.
-- **Trésorerie > Vue Annuelle :** Affiche le résumé financier pour chaque mois de l'année. Utilisez le champ en haut de cette page pour changer l'année affichée.
+Once successfully activated and permissions are granted, a new top-level menu entry named **"Treasury"** (`Trésorerie`) will appear in your Dolibarr navigation bar.
 
----
+* **Treasury > Monthly View:** Access the detailed dashboard and visual charts for the current month.
+* **Treasury > Annual View:** Access the financial summary broken down by month. Use the input field at the top of the interface to toggle between different fiscal years.
