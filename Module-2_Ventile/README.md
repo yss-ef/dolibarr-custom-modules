@@ -71,6 +71,5 @@ Ensure the following native Dolibarr modules are active:
 6. Click **"Save payment"**.
 7. The system will generate two distinct payment records, route them to their respective ledgers, and redirect you to the updated invoice.
 
----
-*Authored by Youssef Fellah.*
-*Developed during professional internship at HTBS Africa.*
+Authored by Youssef Fellah.  
+Developed during professional internship at HTBS Africa.

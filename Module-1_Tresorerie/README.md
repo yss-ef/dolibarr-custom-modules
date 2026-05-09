@@ -72,6 +72,5 @@ Once successfully activated and permissions are granted, a new top-level menu en
 * **Treasury > Monthly View:** Access the detailed dashboard and visual charts for the current month.
 * **Treasury > Annual View:** Access the financial summary broken down by month. Use the input field at the top of the interface to toggle between different fiscal years.
 
----
-*Authored by Youssef Fellah.*
-*Developed during professional internship at HTBS Africa.*
+Authored by Youssef Fellah.  
+Developed during professional internship at HTBS Africa.

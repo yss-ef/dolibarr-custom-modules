@@ -77,6 +77,5 @@ With the template installed and extrafields configured:
 4. In the document generation section, select your custom template from the dropdown menu.
 5. Click **Generate**. The final PDF will compile all metadata and automatically calculate the chronological execution of your tasks.
 
----
-*Authored by Youssef Fellah.*
-*Developed during professional internship at HTBS Africa.*
+Authored by Youssef Fellah.  
+Developed during professional internship at HTBS Africa.

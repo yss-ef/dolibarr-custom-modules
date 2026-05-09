@@ -74,6 +74,5 @@ With the module installed, the extrafield configured, and the ODT template uploa
 5. From the "Model to use" dropdown, **select the newly uploaded ODT template**.
 6. Click **Generate**. The final document will dynamically render the custom tax acronym you provided.
 
----
-*Authored by Youssef Fellah.*
-*Developed during professional internship at HTBS Africa.*
+Authored by Youssef Fellah.  
+Developed during professional internship at HTBS Africa.

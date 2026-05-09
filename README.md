@@ -65,6 +65,5 @@ The modules are built following the standard Dolibarr development patterns:
 3.  **Permissions**: Ensure the web server has appropriate read/write access to the cloned folders.
 4.  **Activation**: Enable the modules via **Setup > Modules/Applications** in the Dolibarr admin panel.
 
----
-*Authored by Youssef Fellah.*
-*Developed during professional internship at HTBS Africa.*
+Authored by Youssef Fellah.  
+Developed during professional internship at HTBS Africa.
