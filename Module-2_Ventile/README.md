@@ -70,3 +70,7 @@ Ensure the following native Dolibarr modules are active:
 5. For **Split 2**, input the remaining amount to be converted, apply the exact bank exchange rate, and select the target local bank account. The converted total will calculate automatically.
 6. Click **"Save payment"**.
 7. The system will generate two distinct payment records, route them to their respective ledgers, and redirect you to the updated invoice.
+
+---
+*Authored by Youssef Fellah.*
+*Developed during professional internship at HTBS Africa.*
