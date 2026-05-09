@@ -1,16 +1,16 @@
-# 💰 Dolibarr Treasury Dashboard Module
+# Dolibarr Treasury Dashboard Module
 
 > **Dolibarr ERP/CRM Extension**
 > A comprehensive financial dashboard module designed to provide a clear, detailed view of monthly cash flows and an annual synthesis of financial activities. It empowers managers to anticipate cash movements, track overdue payments, and analyze overall financial health.
 
-## 📑 Table of Contents
+## Table of Contents
 
 * [Core Features](https://www.google.com/search?q=%23-core-features)
 * [System Prerequisites](https://www.google.com/search?q=%23%EF%B8%8F-system-prerequisites)
 * [Installation Guide](https://www.google.com/search?q=%23-installation-guide)
 * [User Guide](https://www.google.com/search?q=%23-user-guide)
 
-## ✨ Core Features
+## Core Features
 
 * **Monthly Summary Board:** Displays a unified overview combining both **realized and forecasted** cash flows for the current month, including:
 * Total inflows (inclusive of tax).
@@ -26,7 +26,7 @@
 * **Granular Data Lists:** Strictly separates forecasted transactions (pending invoices, scheduled charges) from realized activities (paid invoices, settled charges) for precise financial tracking.
 * **Visual Analytics:** Integrates two distinct charts within the monthly view to visualize cash flow synthesis and weekly commercial activity trends.
 
-## ⚙️ System Prerequisites
+## System Prerequisites
 
 Ensure your Dolibarr environment meets the following requirements before installation:
 
@@ -39,7 +39,7 @@ Ensure your Dolibarr environment meets the following requirements before install
 
 
 
-## 🚀 Installation Guide
+## Installation Guide
 
 To install and configure this module on your local server (e.g., **Fedora 43** with a standard web server stack):
 
@@ -65,7 +65,7 @@ sudo chown -R apache:apache /var/www/html/dolibarr/htdocs/custom/tresoreriemensu
 2. Select the relevant user or group.
 3. Under the **Permissions** tab, grant the right: **"View the treasury dashboard"**.
 
-## 📖 User Guide
+## User Guide
 
 Once successfully activated and permissions are granted, a new top-level menu entry named **"Treasury"** (`Trésorerie`) will appear in your Dolibarr navigation bar.
 

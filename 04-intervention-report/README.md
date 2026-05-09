@@ -1,9 +1,9 @@
-# 📄 Dolibarr Custom Intervention Report (PV) Template
+# Dolibarr Custom Intervention Report (PV) Template
 
 > **Dolibarr ERP/CRM Extension**
 > An advanced PDF document template engineered to generate bespoke Field Service Reports (*Procès-Verbaux d'Intervention*). This module replaces standard generic templates with a professional design, integrating smart features to automate data entry and dynamically adapt to specific business requirements.
 
-## 📑 Table of Contents
+## Table of Contents
 
 * [Core Features](https://www.google.com/search?q=%23-core-features)
 * [Mandatory Configuration (Extrafields)](https://www.google.com/search?q=%23%EF%B8%8F-mandatory-configuration-extrafields)
@@ -11,19 +11,19 @@
 * [Activation & Setup](https://www.google.com/search?q=%23-activation--setup)
 * [Usage Workflow](https://www.google.com/search?q=%23-usage-workflow)
 
-## ✨ Core Features
+## Core Features
 
 * **Professional Layout:** Upgrades the default Dolibarr PDF output to a clean, corporate-ready document structure.
 * **Dynamic Data Injection:** Automatically maps and displays custom intervention metadata directly onto the final PDF.
 * **Automated Time Tracking:** Intelligently calculates and displays precise start times, end times, and overall durations based on the individual tasks logged within the intervention card.
 * **Contextual Adaptation:** Bypasses the limitations of generic documents by tailoring the output strictly to field service operations.
 
-## ⚙️ Mandatory Configuration (Extrafields)
+## Mandatory Configuration (Extrafields)
 
-> **⚠️ CRITICAL:** For the PHP template to fetch and render the data correctly, you must manually create specific custom attributes (Extrafields) in Dolibarr. This is a one-time setup.
+> **CRITICAL:** For the PHP template to fetch and render the data correctly, you must manually create specific custom attributes (Extrafields) in Dolibarr. This is a one-time setup.
 
 1. Navigate to **Home > Setup > Modules/Applications**.
-2. Locate the **Interventions** module and click its setup icon (⚙️).
+2. Locate the **Interventions** module and click its setup icon ().
 3. Go to the **Complementary attributes (Interventions)** tab.
 4. Click **New attribute** and create the following six fields *exactly* as listed below:
 
@@ -36,7 +36,7 @@
 | Contract Number | `numeromarche` | String (1 line) |
 | Quarter | `trimestre` | String (1 line) |
 
-## 🚀 Installation Guide
+## Installation Guide
 
 Unlike standard modules that go into the `custom` folder, PDF models must be placed directly into the core document directories. To install this on your **Fedora 43** environment:
 
@@ -59,15 +59,15 @@ sudo chmod 644 /var/www/html/dolibarr/htdocs/core/modules/fichinter/doc/pdf_pers
 
 ```
 
-## 🔌 Activation & Setup
+## Activation & Setup
 
-1. Return to the **Interventions** module setup page (Home > Setup > Modules/Applications > Interventions ⚙️).
+1. Return to the **Interventions** module setup page (Home > Setup > Modules/Applications > Interventions ).
 2. Scroll down to the **Interventions cards document models** section.
 3. The new template (e.g., "PV Intervention Final") will now appear in the list.
 4. Toggle the switch to **Enable** it.
 5. *(Optional)* Click the star icon to set it as the default generation model for all future interventions.
 
-## 📖 Usage Workflow
+## Usage Workflow
 
 With the template installed and extrafields configured:
 
