@@ -1,58 +1,83 @@
-# Dolibarr ERP Custom Modules
+# Dolibarr ERP custom modules
 
-A collection of professional-grade extensions for the Dolibarr ERP/CRM ecosystem, developed to optimize financial workflows, accounting precision, and operational reporting. These modules were engineered to address complex business requirements during a professional internship at HTBS Africa.
+This repository contains professional-grade extensions for the Dolibarr ERP/CRM
+ecosystem designed to optimize financial workflows, accounting precision, and
+operational reporting. These modules address complex business requirements by
+automating manual accounting tasks and providing real-time treasury insights
+not available in the native ERP distribution.
 
-## Project Overview
-This repository contains four specialized modules designed to extend Dolibarr's core functionality. The focus of this project was to automate manual accounting tasks and provide real-time treasury insights that are not available in the native ERP distribution.
+## Project overview
 
-## Technical Stack
-*   Platform: Dolibarr ERP/CRM (v14.0+)
-*   Language: PHP 7.4+ / 8.x
-*   Database: MySQL / MariaDB (Relational Modeling)
-*   Integration: Hook & Trigger System, Module Descriptor (CRUD logic)
-*   Reporting: ODT/PDF Template Engine
+The repository includes four specialized modules that extend Dolibarr core
+functionality. These tools were engineered to streamline financial operations
+and enhance data visibility within the ERP environment.
 
-## Core Modules
+## Technical stack
 
-### 1. Treasury Management ([01-treasury-dashboard](./01-treasury-dashboard))
-*   Function: Advanced cash flow tracking and financial forecasting.
-*   Key Logic: Implements real-time monitoring of bank accounts and expected payments to provide a consolidated view of company liquidity.
+- **Platform:** Dolibarr ERP/CRM (v14.0+)
+- **Language:** PHP 7.4 or 8.x
+- **Database:** MySQL or MariaDB (relational modeling)
+- **Integration:** Hook and trigger system, module descriptor (CRUD logic)
+- **Reporting:** ODT and PDF template engine
 
-### 2. Payment Split & Ventilation ([02-payment-split](./02-payment-split))
-*   Function: Automation of complex accounting breakdowns and multi-currency splitting.
-*   Key Logic: Streamlines the process of "ventilation" (allocation) of accounting entries across multiple cost centers and bank accounts.
+## Core modules
 
-### 3. Custom Taxation Engine ([03-custom-taxation](./03-custom-taxation))
-*   Function: Dynamic tax rule management and acronym customization.
-*   Key Logic: Allows for the definition and application of customized tax rates and labels (e.g., VAT, GST, TVA) on a per-invoice basis.
+### 1. Treasury management
 
-### 4. Intervention Report Model ([04-intervention-report](./04-intervention-report))
-*   Function: Automated document generation for field services.
-*   Key Logic: A structured report generation system that pulls real-time intervention data into formal Process-Verbal (PV) documents.
+The treasury management module provides advanced cash flow tracking and
+financial forecasting. It implements real-time monitoring of bank accounts and
+expected payments to offer a consolidated view of company liquidity.
 
-## System Architecture
-The modules are built following the standard Dolibarr development patterns:
-*   Module Descriptor: Defines permissions, menus, and database tables.
-*   Business Logic: Encapsulated in PHP classes for maintainability.
-*   User Interface: Integrated seamlessly into the existing Dolibarr HUD (Heads-Up Display).
+### 2. Payment split and ventilation
 
-## Deployment & Installation
+The payment split and ventilation module automates complex accounting
+breakdowns and multi-currency splitting. It streamlines the allocation
+(ventilation) of accounting entries across multiple cost centers and bank
+accounts.
+
+### 3. Custom taxation engine
+
+The custom taxation engine enables dynamic tax rule management and acronym
+customization. It allows users to define and apply customized tax rates and
+labels, such as VAT, GST, or TVA, on a per-invoice basis.
+
+### 4. Intervention report model
+
+The intervention report model facilitates automated document generation for
+field services. This structured report generation system pulls real-time
+intervention data into formal process-verbal (PV) documents.
+
+## System architecture
+
+The modules follow standard Dolibarr development patterns to ensure stability
+and maintainability.
+
+- **Module descriptor:** Defines permissions, menus, and database tables.
+- **Business logic:** Encapsulated in PHP classes for maintainability.
+- **User interface:** Integrated seamlessly into the existing Dolibarr HUD.
+
+## Deployment and installation
 
 ### Prerequisites
-*   Functioning Dolibarr installation (LAMP/LEMP stack).
-*   Administrative access to the ERP.
 
-### Installation Steps
-1.  Navigate to your Dolibarr `custom` directory:
-    ```bash
-    cd /path/to/dolibarr/htdocs/custom/
-    ```
-2.  Clone this repository:
-    ```bash
-    git clone git@github.com:yss-ef/dolibarr-custom-modules.git
-    ```
-3.  Permissions: Ensure the web server has appropriate read/write access to the cloned folders.
-4.  Activation: Enable the modules via Setup > Modules/Applications in the Dolibarr admin panel.
+- A functioning Dolibarr installation (LAMP or LEMP stack).
+- Administrative access to the ERP instance.
 
-Authored by Youssef Fellah.  
-Developed during professional internship at HTBS Africa.
+### Installation steps
+
+1. Navigate to the Dolibarr `custom` directory:
+   ```bash
+   cd /path/to/dolibarr/htdocs/custom/
+   ```
+2. Clone the repository:
+   ```bash
+   git clone git@github.com:yss-ef/dolibarr-custom-modules.git
+   ```
+3. Permissions: Ensure the web server has appropriate read and write access to
+   the cloned folders.
+4. Activation: Enable the modules through the **Setup > Modules/Applications**
+   menu in the Dolibarr admin panel.
+
+## Credits
+
+Developed by Youssef Fellah during a professional internship at HTBS Africa.
